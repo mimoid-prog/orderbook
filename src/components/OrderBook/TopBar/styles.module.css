@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  background-color: #ebebeb;
+  align-items: center;
+  padding: 24px;
+}
+
+.select {
+  border: none;
+  outline: 0;
+  text-align: center;
+  padding: 10px;
+}
+
+.statsBox p {
+  margin: 0;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+}
+
+@media (min-width: 1280px) {
+  .root {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

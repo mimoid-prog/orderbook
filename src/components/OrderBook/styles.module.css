@@ -1,0 +1,18 @@
+.orderBook {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1280px) {
+  .root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .orderBook {
+    width: 1100px;
+    border: 1px solid #828282;
+  }
+}

@@ -1,0 +1,100 @@
+.root {
+  width: 100%;
+  max-width: 600px;
+}
+
+.titleBox {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  margin-top: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.titleAnimation::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border: 2px solid;
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation-name: loadingIconAnimation;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loadingIconAnimation {
+  0% {
+    transform: translateY(-50%) rotate(0);
+  }
+  50% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.bidTitle {
+  color: green;
+}
+
+.bidTitle::after {
+  border-color: green;
+}
+
+.askTitle {
+  color: red;
+}
+
+.askTitle::after {
+  border-color: red;
+}
+
+.skeleton {
+  margin-bottom: 4px;
+}
+
+.table {
+  font-size: 13px;
+  overflow: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.headerRow {
+  font-weight: 700;
+}
+
+.row div {
+  padding: 4px 0px;
+}
+
+.rateCell {
+  width: 20%;
+  min-width: 80px;
+}
+
+.currencyOneCell {
+  width: 27%;
+  min-width: 140px;
+}
+
+.currencyTwoCell {
+  width: 40%;
+  min-width: 180px;
+}
+
+.offersAmountCell {
+  width: 13%;
+  min-width: 80px;
+}
