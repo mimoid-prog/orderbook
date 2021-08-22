@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import Skeleton from "react-loading-skeleton";
 import { Offer } from "src/types/Offer";
+import { shorten } from "src/utils";
 import classes from "./styles.module.css";
 
 type Props = {
@@ -46,13 +47,19 @@ const Table = ({ type, offers, currencyOne, currencyTwo, limit }: Props) => {
               <div className={classes.offersAmountCell}>Ilość ofert</div>
             </div>
             {offers.map((offer) => {
-              const totalPrice = parseFloat(offer.ra) * parseFloat(offer.ca);
+              const totalPrice = (
+                parseFloat(offer.ra) * parseFloat(offer.ca)
+              ).toString();
 
               return (
                 <div className={classes.row}>
                   <div className={classes.rateCell}>{offer.ra}</div>
-                  <div className={classes.currencyOneCell}>{offer.ca}</div>
-                  <div className={classes.currencyTwoCell}>{totalPrice}</div>
+                  <div className={classes.currencyOneCell}>
+                    {shorten(offer.ca, 15)}
+                  </div>
+                  <div className={classes.currencyTwoCell}>
+                    {shorten(totalPrice, 20)}
+                  </div>
                   <div className={classes.offersAmountCell}>{offer.co}</div>
                 </div>
               );
